@@ -1,0 +1,7 @@
+-r requirements.lock
+ruff==0.16.10
+mypy==2.4.0
+build==1.6.1
+pip-audit==2.10.1
+setuptools==80.9.0
+PyYAML==6.0.3

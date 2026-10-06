@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "project_name": "Toolkit_OneClip_Test",
+  "canvas": {"width": 1920, "height": 1080, "fps": 30},
+  "clips": [
+    {"file": "sample.mp4", "in": 0, "out": 5, "volume": 0, "rotation": 0}
+  ],
+  "captions": [
+    {"text": "CapCut toolkit test", "start": 0, "end": 5, "position": "center", "size": 3}
+  ]
+}

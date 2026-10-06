@@ -1,0 +1,4 @@
+# Only the local draft library is used, not VectCutAPI's HTTP/MCP servers.
+imageio==2.38.0
+numpy==2.4.6
+pillow==12.3.0

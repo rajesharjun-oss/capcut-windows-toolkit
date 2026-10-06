@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "project_name": "Event_Highlight_Review_01",
+  "clips": [
+    {"file": "00_Brand/flyer.png", "duration": 1, "fade_in": 0.2},
+    {"file": "01_Opening_Hook/welcome.mp4", "in": 15, "out": 23, "speech": true},
+    {"file": "02_Guests_And_Vibes/dancing.mp4", "in": 0, "out": 5},
+    {"file": "02_Guests_And_Vibes/food.mp4", "in": 0, "out": 2},
+    {"file": "02_Guests_And_Vibes/crowd.mp4", "in": 0, "out": 5},
+    {"file": "03_Ex_Mr_Miss_KP/legacy.mp4", "in": 0, "out": 8, "transition": "mix"},
+    {"file": "04_Contestants/runway.mp4", "in": 0, "out": 8},
+    {"file": "05_Winners/winner.mp4", "in": "01m01s", "out": "01m06s", "speech": true},
+    {"file": "05_Winners/winner.mp4", "in": "01m10s", "out": "01m20s"},
+    {"file": "00_Brand/flyer.png", "duration": 2, "fade_out": 0.5}
+  ],
+  "music": [
+    {"file": "06_Music/transition.wav", "in": 0, "out": 10, "at": 9, "fade_in": 0, "fade_out": 1},
+    {"file": "06_Music/main.wav", "in": 0, "out": 21, "at": 18, "fade_in": 1, "fade_out": 1},
+    {"file": "06_Music/celebration.wav", "in": 0, "out": 12, "at": 42, "fade_in": 0.5, "fade_out": 1}
+  ],
+  "captions": [
+    {"text": "Outgoing\nMr and Miss KP", "start": 21, "end": 29, "position": "top-left"},
+    {"text": "Runway assignment\nCorporate fit", "start": 29, "end": 37, "position": "top-left"}
+  ]
+}

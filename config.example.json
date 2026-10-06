@@ -1,0 +1,7 @@
+{
+  "media_root": "%USERPROFILE%/Videos/MyEvent",
+  "native_template": "%LOCALAPPDATA%/CapCut/User Data/Projects/com.lveditor.draft/Toolkit_Empty_Template",
+  "capcut_root": "%LOCALAPPDATA%/CapCut/User Data/Projects/com.lveditor.draft",
+  "work_root": "./local",
+  "vectcut_path": "./vendor/VectCutAPI"
+}
