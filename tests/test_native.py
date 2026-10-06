@@ -16,6 +16,7 @@ PID = "33333333-3333-4333-8333-333333333333"
 
 
 def fixture(base: Path) -> Config:
+    base = base.resolve()
     projects = base / "projects"
     template = projects / "Empty"
     media = base / "media"
@@ -117,6 +118,19 @@ class NativeTests(unittest.TestCase):
         self.assertEqual(attachment["timeline_id"], manifest["timeline_id"])
         self.assertNotIn(str(job), json.dumps(content))
         self.assertFalse((self.config.capcut_root / "Smoke_Test").exists())
+
+    @unittest.skipUnless(os.name == "nt", "Windows short-path regression")
+    def test_short_path_alias_hashes_match(self):
+        import ctypes
+
+        get_short_path = ctypes.WinDLL("kernel32", use_last_error=True).GetShortPathNameW
+        get_short_path.argtypes = [ctypes.c_wchar_p, ctypes.c_wchar_p, ctypes.c_uint32]
+        get_short_path.restype = ctypes.c_uint32
+        buffer = ctypes.create_unicode_buffer(32768)
+        result = get_short_path(str(self.config.native_template), buffer, len(buffer))
+        self.assertGreater(result, 0)
+        alias = Path(buffer.value)
+        self.assertEqual(file_hashes(alias), file_hashes(self.config.native_template))
 
     def test_unknown_version_rejected(self):
         path = self.config.native_template / "Timelines" / TID / "draft_content.json"

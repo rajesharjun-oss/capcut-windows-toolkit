@@ -37,7 +37,7 @@ def timeline_id(project: dict) -> str:
 
 
 def tree_files(root: Path) -> list[Path]:
-    no_links(root)
+    root = no_links(root)
     found = []
     total = 0
     for folder, directories, files in os.walk(root, followlinks=False):
@@ -53,6 +53,7 @@ def tree_files(root: Path) -> list[Path]:
 
 
 def inspect_template(root: Path) -> dict:
+    root = no_links(root)
     files = tree_files(root)
     if len(files) > 500 or sum(p.stat().st_size for p in files) > 64_000_000:
         raise ToolkitError("Select a small, empty native template project.")
@@ -116,6 +117,7 @@ def mirror_paths(tid: str) -> list[str]:
 
 
 def file_hashes(root: Path) -> dict[str, str]:
+    root = no_links(root)
     return {path.relative_to(root).as_posix(): digest(path) for path in tree_files(root)}
 
 

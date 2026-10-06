@@ -3,7 +3,7 @@
 Version 0.1.0 was checked on Windows with Python 3.11.9 and the VectCutAPI revision
 recorded in upstream.json.
 
-- 45 core tests passed, including Windows junction rejection, interrupted
+- 46 core tests passed, including Windows short-path handling, junction rejection, interrupted
   deployment, concurrent edits, filename timing and stream coverage checks.
 - The optional real-engine integration test passed with generated video, audio
   and a still image. Deployment used an isolated synthetic project root.

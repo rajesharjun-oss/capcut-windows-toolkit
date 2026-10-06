@@ -16,6 +16,11 @@ class Config:
     work_root: Path
     vectcut_path: Path
 
+    def __post_init__(self) -> None:
+        # Direct library callers can supply Windows 8.3 aliases as well as long paths.
+        for name in self.__dataclass_fields__:
+            object.__setattr__(self, name, no_links(getattr(self, name)))
+
     @classmethod
     def load(cls, path: Path) -> "Config":
         data = keys(
